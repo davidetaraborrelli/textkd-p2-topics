@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-A tiny, clean **baseline for topic modeling** that compares a **classic** approach (**LDA**) with a **contextual** one (**BERTopic**).  
+A little **baseline for topic modeling** that compares a **classic** approach (**LDA**) with a **contextual** one (**BERTopic**).  
 It runs on **20 Newsgroups**, computes **topic coherence (c_v)** and **topic diversity**, and saves **metrics** and **topic tables**.
 
 ## TL;DR
@@ -64,9 +64,9 @@ python src\train.py
 - Clear README with steps and outputs.
 - Reproducible `metrics.json` + at least one plot and two topic tables under `results/`.
 
-## Results (fast run)
+## Results (full run)
 
-Setup: Python **3.13**, 20 Newsgroups (subset via `--fast`).  
+Setup: Python **3.13**, 20 Newsgroups (full dataset).  
 Config highlights: `pca_n_components=10`, `kmeans_n_clusters=16`, `min_topic_size=15`, `top_n_words=10`, embedding=`all-MiniLM-L6-v2`.
 
 > **Coherence note.** We compute a lightweight **NPMI coherence** to stay NumPy/Scikit-only on Python 3.13.  
@@ -76,6 +76,8 @@ Config highlights: `pca_n_components=10`, `kmeans_n_clusters=16`, `min_topic_siz
 |-----------|------------------------:|----------------:|-------:|
 | LDA       | **0.3345**              | **0.8300**      |   10   |
 | BERTopic  | **0.3584**              | **0.7938**      |   16   |
+
+Numbers sourced from `results/metrics.json`. :contentReference[oaicite:1]{index=1}
 
 ![Comparison](results/plots/coherence_vs_diversity.png)
 
@@ -88,9 +90,9 @@ python src/train.py --fast
 # metrics: results/metrics.json
 # topics:  results/topics/{lda_topics.csv, bertopic_topics.csv}
 # plot:    results/plots/coherence_vs_diversity.png
+```
 
 ## Project structure
-
 ~~~text
 repo/
 ├─ README.md

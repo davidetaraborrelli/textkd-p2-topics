@@ -1,0 +1,14 @@
+{
+  "LDA": {
+    "coherence_c_v": 0.21657738374758492,
+    "topic_diversity": 0.83,
+    "n_topics": 10,
+    "train_seconds": 15.015291213989258
+  },
+  "BERTopic": {
+    "coherence_c_v": 0.3017616419439614,
+    "topic_diversity": 0.775,
+    "n_topics": 16,
+    "train_seconds": 82.6247787475586
+  }
+}

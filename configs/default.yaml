@@ -1,0 +1,25 @@
+# Default config for TextKD — P2 Topics
+general:
+  random_state: 42
+  top_n_words: 10
+  # FAST mode: keep runtime small for first iterations
+  fast:
+    categories: ["comp.graphics", "sci.space", "rec.sport.hockey", "talk.politics.mideast"]
+    max_docs: 2000  # None for unlimited
+lda:
+  n_topics: 10
+  max_df: 0.95
+  min_df: 2
+  max_features: 5000
+  learning_method: "batch"
+  learning_decay: 0.7
+bertopic:
+  nr_topics: "auto"       # can be "auto" or an int
+  min_topic_size: 15
+  embedding_model: "all-MiniLM-L6-v2"  # Sentence-Transformers backbone
+  umap_n_neighbors: 15
+  umap_n_components: 5
+  hdbscan_min_cluster_size: 15
+  pca_n_components: 10 # optimized
+  kmeans_n_clusters: 16 # optimized
+
